@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Grupo2;
 
 import Modelo.Producto;
@@ -11,6 +8,7 @@ import java.util.List;
  *
  * @author user
  */
+
 public class ServicioGrupo2 {
     public static boolean verificarLimite(double total){
         return total<=5000;
@@ -31,4 +29,9 @@ public class ServicioGrupo2 {
         return productos.stream()
             .allMatch(p -> p.getCantidad() > 0);
     }
+    
+    public static boolean validarDescuentoAplicable(Producto p, double porcentaje) {
+    return p.isDescuentoAplicable() && porcentaje >= 0 && porcentaje <= 50;
 }
+}
+
